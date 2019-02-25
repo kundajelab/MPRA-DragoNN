@@ -13,7 +13,7 @@ class MPRADataLoader(Sequence):
         self.labels = self.data['Y']['output']
 
     def __len__(self):
-        return 10 #self.inputs.shape[0]//self.batch_size
+        return self.inputs.shape[0]//self.batch_size
 
     def __getitem__(self, idx):
         return self.inputs[idx:idx+self.batch_size], self.labels[idx:idx+self.batch_size]
