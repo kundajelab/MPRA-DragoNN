@@ -1,0 +1,23 @@
+{
+  "data_path":"./data",
+  "exp": {
+    "name": "MPRA"
+  },
+  "model":{
+    "learning_rate": 0.0002,
+    "optimizer": "adam"
+  },
+  "trainer":{
+    "num_epochs": 20,
+    "batch_size": 64,    
+    "verbose_training": true
+  },
+  "callbacks":{
+    "checkpoint_monitor": "val_loss",
+    "checkpoint_mode": "min",
+    "checkpoint_save_best_only": true,
+    "checkpoint_save_weights_only": true,
+    "checkpoint_verbose": true,
+    "tensorboard_write_graph": true    
+  }
+}
