@@ -15,11 +15,11 @@ class ConvModel(BaseModel):
         self.model.add(BatchNormalization())
         self.model.add(Dropout(0.1))
 
-        self.model.add(Conv1D(120, 5, activation='relu', input_shape=(145, 4)))
+        self.model.add(Conv1D(120, 5, activation='relu'))
         self.model.add(BatchNormalization())
         self.model.add(Dropout(0.1))
 
-        self.model.add(Conv1D(120, 5, activation='relu', input_shape=(145, 4)))
+        self.model.add(Conv1D(120, 5, activation='relu'))
         self.model.add(BatchNormalization())
         self.model.add(Dropout(0.1))
 
