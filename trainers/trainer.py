@@ -22,7 +22,7 @@ class Trainer():
 
         self.callbacks.append(
             ModelCheckpoint(
-                filepath=os.path.join(self.config.checkpoint_dir, '%s-{epoch:02d}-{val_loss:.2f}.hdf5' % self.config.experiment_name),
+                filepath=os.path.join(self.config.checkpoint_dir, '%s-{epoch:02d}-{val_loss:.2f}-{val_mean_spearmanr:.2f}.hdf5' % self.config.experiment_name),
                 monitor=self.config.checkpoint_monitor,
                 mode=self.config.checkpoint_mode,  
                 save_best_only=self.config.checkpoint_save_best_only,
