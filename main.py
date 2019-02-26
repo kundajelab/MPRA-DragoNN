@@ -1,6 +1,7 @@
 from data_loader.mpra_data_loader import MPRADataLoader as DataLoader
 from models.conv_model import ConvModel as Model
 from trainers.trainer import Trainer as Trainer
+from evaluator.evaluator import Evaluator as Evaluator
 from utils.dirs import create_dirs
 from utils.fetch_args import fetch_args
 
@@ -22,7 +23,10 @@ def main():
         model.load(config.pretrained_model_checkpoint)
     
     if config.evaluate:
-        
+        test_data_loader = DataLoader(config, 'test')
+        evaluator = Evaluator(model.model, test_data_loader, config)
+        evaluator.evaluate()
+        exit(0)
 
     print('Create the trainer')
     trainer = Trainer(model.model, train_data_loader, valid_data_loader, config)
