@@ -38,7 +38,7 @@ For other inputs, such as hyperparameters, refer
 python main.py --help
 ```
 
-We have provided a pretrained model in the `pretrained_models` directory.
+We also provide support for [Kipoi](https://github.com/kipoi/kipoi). We have provided a pretrained model at `kipoi/pretrained.hdf5` directory.
 
 ## Citation
 

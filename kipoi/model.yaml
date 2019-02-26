@@ -1,0 +1,55 @@
+defined_as: kipoi.model.KerasModel
+args: # arguments of kipoi.model.KerasModel
+    arch: model.json
+        #url: https://github.com/kundajelab/mpra_minimal/kipoi/model.json
+        #md5: 930692182c3fcbb4483115fa4ac386f8
+    weights: pretrained.hdf5
+        #url: https://github.com/kundajelab/mpra_minimal/kipoi/pretrained.hdf5
+        #md5: 19fb17f943c3d6bcada8c5dc638092b4 
+
+default_dataloader:
+    defined_as: kipoiseq.dataloaders.SeqIntervalDl
+
+    default_args: # Optional arguments to the SeqIntervalDl dataloader
+        # See also https://kipoi.org/kipoiseq/dataloaders/#seqintervaldl 
+        auto_resize_len: 145 # Automatically resize sequence intervals
+        alphabet_axis: 1
+        # dummy_axis: 2 # Add a dummy axis. Omit in order not to create dummy_axis.
+        alphabet: "ACGT" # Order of letters in 1-hot encoding
+        ignore_targets: False # if True, dont return any target variables
+
+info: # General information about the model
+    authors:
+        - name: Rajiv Movva, Surag Nair
+          github: rmovva, suragnair
+          email:
+    doc: Model predicting X
+    cite_as: https://doi.org:/... # preferably a doi url to the paper
+    trained_on: Dataset Y. held-out chromosomes chr8, chr9 and chr22.
+    license: MIT # Software License - if not set defaults to MIT
+    # You can also specify the license in the LICENSE file
+
+dependencies:
+    conda: # install via conda
+      - python=3.5
+      - h5py
+      # - soumith::pytorch  # <channel>::<package> syntax
+    pip:   # install via pip
+      - keras>=2.0.4
+      - tensorflow>=1.0
+
+schema:  # Model schema. The schema defintion is essential for kipoi plug-ins to work.
+    inputs:  # input = single numpy array
+        shape: (145,4)  # array shape of a single sample (omitting the batch dimension)
+        doc: input feature description
+
+    # inputs:  # input = dictionary of fields
+    #   seq:
+    #     shape: (100,4)
+    #     doc: input feature description
+    #   other_track:
+    #     shape: (50,)
+    #     doc: input feature description
+    targets:
+        shape: (11,)
+        doc: model prediction description
