@@ -9,11 +9,11 @@
   },
   "trainer":{
     "num_epochs": 20,
-    "batch_size": 64,    
+    "batch_size": 512,
     "verbose_training": true
   },
   "callbacks":{
-    "checkpoint_monitor": "val_loss",
+    "checkpoint_monitor": "val_mean_spearmanr",
     "checkpoint_mode": "min",
     "checkpoint_save_best_only": true,
     "checkpoint_save_weights_only": true,

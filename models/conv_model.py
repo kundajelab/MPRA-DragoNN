@@ -1,7 +1,9 @@
 from models.base_model import BaseModel
+
 from keras.models import Sequential
 from keras.layers import Input, Dense, Conv1D, MaxPooling2D, Dropout, Flatten, BatchNormalization
 from keras.optimizers import Adam
+import tensorflow as tf
 
 class ConvModel(BaseModel):
     def __init__(self, config):
@@ -29,6 +31,6 @@ class ConvModel(BaseModel):
         self.model.compile(
             loss= "mean_squared_error",
             optimizer=self.config.model.optimizer,
-            # metrics?
+            # custom metrics in trainer
         )
 
