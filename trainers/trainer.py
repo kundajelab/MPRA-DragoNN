@@ -46,6 +46,8 @@ class Trainer():
             epochs=self.config.num_epochs,
             verbose=self.config.verbose_training,
             callbacks=self.callbacks,
+            use_multiprocessing=True,
+            workers=self.config.multiprocessing_workers
         )
         
         self.loss.extend(history.history['loss'])        
