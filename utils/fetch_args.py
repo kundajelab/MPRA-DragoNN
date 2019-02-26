@@ -14,9 +14,12 @@ def fetch_args():
     parser.add_argument('-ms', '--max_batch_steps', type=int, default=-1, help='Maximum number of steps in a batch, by default goes through entire batch')
     parser.add_argument('-op', '--optimizer', type=str, default='adam', help='Keras optimizer')
     parser.add_argument('-vt', '--verbose_training', type=int, default=1, help='Verbose Training')
+    
+    parser.add_argument('-pt', '--pretrained_model_checkpoint', type=str, default=None, help='Path to pretrained model to load')
+    parser.add_argument('-ev', '--evaluate', type=int, default=0, help='Run evaluation on test set')
 
     parser.add_argument('-mw', '--multiprocessing_workers', type=int, default=6, help='Number of workers for data loading')
-
+    
     # for callbacks
     parser.add_argument('-mn', '--checkpoint_monitor', type=str, default= 'val_mean_spearmanr', help='Primary training metric')
     parser.add_argument('-md', '--checkpoint_mode', type=str, default='max', help='Primary training metric condition')

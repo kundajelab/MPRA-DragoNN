@@ -1,7 +1,7 @@
 import os
 from keras.callbacks import ModelCheckpoint, TensorBoard
 from utils.metrics import CorrelationMetrics
-import pdb
+
 
 class Trainer():
     def __init__(self, model, train_data_loader, valid_data_loader, config):

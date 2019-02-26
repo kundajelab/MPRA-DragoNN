@@ -18,6 +18,11 @@ def main():
 
     print('Create the model.')
     model = Model(config)
+    if config.pretrained_model_checkpoint is not None:
+        model.load(config.pretrained_model_checkpoint)
+    
+    if config.evaluate:
+        
 
     print('Create the trainer')
     trainer = Trainer(model.model, train_data_loader, valid_data_loader, config)
