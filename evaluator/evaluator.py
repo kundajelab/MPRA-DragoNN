@@ -1,6 +1,6 @@
 import os
 from utils.metrics import pearsonr_metric, spearmanr_metric
-
+from utils.helper import predict_on_generator
 
 class Evaluator():
     def __init__(self, model, test_data_loader, config):
@@ -9,7 +9,7 @@ class Evaluator():
         self.test_data_loader = test_data_loader
 
     def evaluate(self):
-        preds, labels = self.model.predict_on_generator(self.test_data_loader)
+        preds, labels = predict_on_generator(self.model, self.test_data_loader)
 
         taskwise_pearsonr, mean_pearsonr = pearsonr_metric(labels, preds)
         taskwise_spearmanr, mean_spearmanr = spearmanr_metric(labels, preds)

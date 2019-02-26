@@ -1,7 +1,7 @@
 import numpy as np
 from keras.callbacks import Callback
 from scipy.stats import spearmanr, pearsonr
-import pdb
+from utils.helper import predict_on_generator
 
 
 def pearsonr_metric(y_true, y_pred):
@@ -21,7 +21,7 @@ class CorrelationMetrics(Callback):
         self.valid_data_loader = valid_data_loader
 
     def on_epoch_end(self, epoch, logs=None):
-        preds, labels = self.model.predict_on_generator(self.valid_data_loader)
+        preds, labels = predict_on_generator(self.model, self.valid_data_loader)
 
         taskwise_pearsonr, mean_pearsonr = pearsonr_metric(labels, preds)
         taskwise_spearmanr, mean_spearmanr = spearmanr_metric(labels, preds)
