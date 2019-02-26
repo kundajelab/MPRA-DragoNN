@@ -38,6 +38,8 @@ For other inputs, such as hyperparameters, refer
 python main.py --help
 ```
 
+We have provided a pretrained model in the `pretrained_models` directory.
+
 ## Citation
 
 If you use this code for your research, please cite our paper.
