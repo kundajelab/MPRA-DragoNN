@@ -30,7 +30,7 @@ class ConvModel(BaseModel):
 
         self.model.compile(
             loss= "mean_squared_error",
-            optimizer=self.config.model.optimizer,
+            optimizer=self.config.optimizer,
             # custom metrics in trainer
         )
 

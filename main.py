@@ -1,22 +1,16 @@
 from data_loader.mpra_data_loader import MPRADataLoader as DataLoader
 from models.conv_model import ConvModel as Model
 from trainers.trainer import Trainer as Trainer
-from utils.config import process_config
 from utils.dirs import create_dirs
-from utils.utils import get_args
+from utils.fetch_args import fetch_args
 
 def main():
     # capture the config path from the run arguments
     # then process the json configuration file
-    try:
-        args = get_args()
-        config = process_config(args.config)
-    except:
-        print("missing or invalid arguments")
-        exit(0)
+    config = fetch_args()
 
     # create the experiments dirs
-    create_dirs([config.callbacks.tensorboard_log_dir, config.callbacks.checkpoint_dir])
+    create_dirs([config.tensorboard_log_dir, config.checkpoint_dir])
 
     print('Create the data generator.')
     train_data_loader = DataLoader(config, 'train')
