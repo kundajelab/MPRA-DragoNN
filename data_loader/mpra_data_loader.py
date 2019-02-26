@@ -19,5 +19,5 @@ class MPRADataLoader(Sequence):
         return max_batches
 
     def __getitem__(self, idx):
-        return self.inputs[idx:idx+self.batch_size], self.labels[idx:idx+self.batch_size]
+        return self.inputs[self.batch_size*idx:idx+self.batch_size], self.labels[self.batch_size*idx:idx+self.batch_size]
     
