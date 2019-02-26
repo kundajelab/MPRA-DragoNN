@@ -23,6 +23,7 @@ def main():
         model.load(config.pretrained_model_checkpoint)
     
     if config.evaluate:
+        print('Predicting on test set.')
         test_data_loader = DataLoader(config, 'test')
         evaluator = Evaluator(model.model, test_data_loader, config)
         evaluator.evaluate()
