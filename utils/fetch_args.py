@@ -28,7 +28,8 @@ def fetch_args():
     args = parser.parse_args()
     
     # processing
-    args.tensorboard_log_dir = os.path.join("experiments", time.strftime("%Y-%m-%d/",time.localtime()), args.experiment_name, "logs/")
-    args.checkpoint_dir = os.path.join("experiments", time.strftime("%Y-%m-%d/",time.localtime()), args.experiment_name, "checkpoints/")
+    path_prefix =  os.path.join("experiments", time.strftime("%Y-%m-%d/",time.localtime()), args.experiment_name, 'bs{}_lr{:.4f}'.format(args.batch_size, args.learning_rate))
+    args.tensorboard_log_dir = os.path.join(path_prefix, "logs/")
+    args.checkpoint_dir = os.path.join(path_prefix, "checkpoints/")
 
     return args
