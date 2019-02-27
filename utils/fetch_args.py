@@ -15,6 +15,9 @@ def fetch_args():
     parser.add_argument('-op', '--optimizer', type=str, default='adam', help='Keras optimizer')
     parser.add_argument('-vt', '--verbose_training', type=int, default=1, help='Verbose Training')
     
+    parser.add_argument('-sl', '--input_sequence_length', type=int, default=145, help='Length of input sequence to the model')
+    parser.add_argument('-no', '--number_of_outputs', type=int, default=12, help='Number of outputs of the model')
+
     parser.add_argument('-pt', '--pretrained_model_checkpoint', type=str, default=None, help='Path to pretrained model to load')
     parser.add_argument('-ev', '--evaluate', type=int, default=0, help='Run evaluation on test set')
 

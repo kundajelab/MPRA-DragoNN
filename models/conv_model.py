@@ -13,7 +13,7 @@ class ConvModel(BaseModel):
     def build_model(self):
         self.model = Sequential()
 
-        self.model.add(Conv1D(120, 5, activation='relu', input_shape=(145, 4)))
+        self.model.add(Conv1D(120, 5, activation='relu', input_shape=(self.config.input_sequence_length, 4)))
         self.model.add(BatchNormalization())
         self.model.add(Dropout(0.1))
 
@@ -26,7 +26,7 @@ class ConvModel(BaseModel):
         self.model.add(Dropout(0.1))
 
         self.model.add(Flatten())
-        self.model.add(Dense(12, activation='linear'))
+        self.model.add(Dense(self.config.number_of_outputs, activation='linear'))
 
         self.model.compile(
             loss= "mean_squared_error",
