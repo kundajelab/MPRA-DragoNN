@@ -1,4 +1,4 @@
-# MPRA
+# SNPpet: Deciphering regulatory DNA sequences and noncoding genetic variants using neural network models of massively parallel reporter assays
 
 This project applies convolutional neural networks to predict output from massively parallel reporter assays (MPRAs), with the aim of systematically decoding regulatory sequence patterns and identifying noncoding variants that may affect gene expression (thus affecting disease risk).
 
@@ -34,9 +34,11 @@ Task description:
 
 ## Model Training 
 
-@Rajiv mention what the model takes as inputs and predicts. Loss funciton etc. Evaluation criteria also. 
+The inputs to our model are shape (145, 4) NumPy arrays corresponding to one-hot encoded 145 base-pair DNA sequences. The outputs are 12 continuous values corresponding to normalized activity levels of the sequence in different cellular contexts (described above).
 
-The models have been implemented in Keras with a Tensorflow backend. To start trianing the model:
+The neural network model used for MPRA activity prediction is a fairly standard convolutional architecture for genomics. We use three convolution layers (ReLU activation), each containing 120 filters of width 5, followed by a single fully connected layer (linear activation) to predict the 12 tasks. Our model uses task-wise mean squared error loss and our primary evaluation criteria (for validation/testing) is the Spearman correlation (robust to outliers, unlike Pearson).
+
+The models have been implemented in Keras with a Tensorflow backend. To train the model:
 
 ```bash
 python main.py --data_path /path/to/data
@@ -64,8 +66,10 @@ python main.py --help
 
 We also provide support for [Kipoi](https://github.com/kipoi/kipoi). We have provided a pretrained model at `kipoi/pretrained.hdf5` directory.
 
+## Help
+
+Feel free to direct questions about this project to Rajiv Movva: rmovva at mit dot edu.
+
 ## Citation
 
-If you use this code for your research, please cite our paper.
-
-<!--- add citation --->
+If you use this code for your research, please cite our bioRxiv paper (we will update with a new citation when our paper is published): Movva, R.\*, Greenside, P., Shrikumar, A. & Kundaje, A.\* Deciphering regulatory DNA sequences and noncoding genetic variants using neural network models of massively parallel reporter assays. bioRxiv (2018). doi:10.1101/393926. \*Co-corresponding authors.
