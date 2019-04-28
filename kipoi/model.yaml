@@ -1,11 +1,11 @@
 defined_as: kipoi.model.KerasModel
 args: # arguments of kipoi.model.KerasModel
-    arch: model.json
-        #url: https://github.com/kundajelab/mpra_minimal/kipoi/model.json
-        #md5: 930692182c3fcbb4483115fa4ac386f8
-    weights: pretrained.hdf5
-        #url: https://github.com/kundajelab/mpra_minimal/kipoi/pretrained.hdf5
-        #md5: 19fb17f943c3d6bcada8c5dc638092b4 
+    arch: 
+        url: {{ model_arch_url }}
+        md5: {{ model_arch_md5 }}
+    weights:
+        url: {{ model_weights_url }} 
+        md5: {{ model_weights_md5 }} 
 
 default_dataloader:
     defined_as: kipoiseq.dataloaders.SeqIntervalDl
@@ -23,7 +23,7 @@ info: # General information about the model
         - name: Rajiv Movva, Surag Nair
           github: rmovva, suragnair
           email: rmovva@mit.edu
-    doc: 3-layer convolutional neural network predicting Sharpr-MPRA activity of arbitrary 145bp sequences
+    doc: Two convolutional neural networks for predicting Sharpr-MPRA activity of arbitrary 145bp sequences. The first is a 3-layer network while the second is a deeper factorized convolutional network.
     cite_as: https://doi.org/10.1101/393926 # preferably a doi url to the paper
     trained_on: Sharpr-MPRA dataset. chr8 validation, chr18 test. other chromosomes train.
     license: MIT # Software License - if not set defaults to MIT

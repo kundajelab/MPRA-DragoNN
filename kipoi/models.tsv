@@ -1,0 +1,3 @@
+model	model_arch_url	model_arch_md5	model_weights_url	model_weights_md5
+ConvModel	https://github.com/kundajelab/mpra_minimal/kipoi/ConvModel/model.json	930692182c3fcbb4483115fa4ac386f8	https://github.com/kundajelab/mpra_minimal/kipoi/ConvModel/pretrained.hdf5	19fb17f943c3d6bcada8c5dc638092b4	
+DeepFactorizedModel	https://github.com/kundajelab/mpra_minimal/kipoi/DeepFactorizedModel/model.json	16434a997183d882312ec8e930bd0100	https://github.com/kundajelab/mpra_minimal/kipoi/DeepFactorizedModel/pretrained.hdf5	a6c876a82779f44f3c645d5feb0143ae	
