@@ -1,5 +1,5 @@
 from data_loader.mpra_data_loader import MPRADataLoader as DataLoader
-from models.conv_model import ConvModel as Model
+from models.deep_factorized_model import DeepFactorizedModel as Model
 from trainers.trainer import Trainer as Trainer
 from evaluator.evaluator import Evaluator as Evaluator
 from utils.dirs import create_dirs
