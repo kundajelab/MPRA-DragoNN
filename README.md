@@ -64,11 +64,21 @@ For other inputs, such as hyperparameters, refer
 python main.py --help
 ```
 
-We also provide support for [Kipoi](https://github.com/kipoi/kipoi). We have provided a pretrained model at `kipoi/pretrained.hdf5` directory.
+## Prediction and Interpretation 
+
+We have provided pretrained models in `kipoi/ConvModel` and `kipoi/DeepFactorizedModel` directories. We provide support for prediction and interpretation through [Kipoi](https://github.com/kipoi/kipoi). The model json and yaml files are also available in the `kipoi` directory. The models can be loaded as:
+
+```python
+import kipoi
+
+model = kipoi.get_model("SNPpet/ConvModel")    # or "SNPpet/DeepFactorizedModel"
+```
+
+Follow the instructions on Kipoi to make predictions on arbitrary sequences and for interpreting the model. 
 
 ## Help
 
-Feel free to direct questions about this project to Rajiv Movva: rmovva at mit dot edu.
+Feel free to direct questions about this project to Rajiv Movva: rmovva at mit dot edu, or open an Issue.
 
 ## Citation
 
