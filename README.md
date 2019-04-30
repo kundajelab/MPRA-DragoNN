@@ -1,4 +1,4 @@
-# SNPpet: Deciphering regulatory DNA sequences and noncoding genetic variants using neural network models of massively parallel reporter assays
+# MPRA-DragoNN: Deciphering regulatory DNA sequences and noncoding genetic variants using neural network models of massively parallel reporter assays
 
 This project applies convolutional neural networks to predict output from massively parallel reporter assays (MPRAs), with the aim of systematically decoding regulatory sequence patterns and identifying noncoding variants that may affect gene expression (thus affecting disease risk).
 
