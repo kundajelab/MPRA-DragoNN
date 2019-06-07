@@ -1,6 +1,6 @@
 # MPRA-DragoNN: Deciphering regulatory DNA sequences and noncoding genetic variants using neural network models of massively parallel reporter assays
 
-This project applies convolutional neural networks to predict output from massively parallel reporter assays (MPRAs), with the aim of systematically decoding regulatory sequence patterns and identifying noncoding variants that may affect gene expression (thus affecting disease risk).
+This project applies convolutional neural networks to predict output from massively parallel reporter assays (MPRAs), with the aim of systematically decoding regulatory sequence patterns and identifying noncoding variants that may affect gene expression.
 
 ## Data
 
@@ -82,4 +82,4 @@ Feel free to direct questions about this project to Rajiv Movva: rmovva at mit d
 
 ## Citation
 
-If you use this code for your research, please cite our bioRxiv paper (we will update with a new citation when our paper is published): Movva, R.\*, Greenside, P., Shrikumar, A. & Kundaje, A.\* Deciphering regulatory DNA sequences and noncoding genetic variants using neural network models of massively parallel reporter assays. bioRxiv (2018). doi:10.1101/393926. \*Co-corresponding authors.
+If you use this code for your research, please cite our bioRxiv paper (we will update with a new citation when our paper is published): Movva, R.\*, Greenside, P., Marinov, G.K., Nair, S., Shrikumar, A. & Kundaje, A.\* Deciphering regulatory DNA sequences and noncoding genetic variants using neural network models of massively parallel reporter assays. bioRxiv (2019). doi:10.1101/393926. \*Co-corresponding authors.
