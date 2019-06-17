@@ -82,4 +82,4 @@ Feel free to direct questions about this project to Rajiv Movva: rmovva at mit d
 
 ## Citation
 
-If you use this code for your research, please cite our bioRxiv paper (we will update with a new citation when our paper is published): Movva, R.\*, Greenside, P., Marinov, G.K., Nair, S., Shrikumar, A. & Kundaje, A.\* Deciphering regulatory DNA sequences and noncoding genetic variants using neural network models of massively parallel reporter assays. bioRxiv (2019). doi:10.1101/393926. \*Co-corresponding authors.
+If you use this code for your research, please cite our paper: Movva R, Greenside P, Marinov GK, Nair S, Shrikumar A, Kundaje A (2019). Deciphering regulatory DNA sequences and noncoding genetic variants using neural network models of massively parallel reporter assays. PLoS ONE 14(6): e0218073. https://doi.org/10.1371/journal.pone.0218073
