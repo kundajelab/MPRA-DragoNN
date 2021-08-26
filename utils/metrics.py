@@ -5,15 +5,20 @@ from utils.helper import predict_on_generator
 
 
 def pearsonr_metric(y_true, y_pred):
-    taskwise_pearsonr = [pearsonr(y_true[:, i], y_pred[:, i])[
-        0] for i in range(y_pred.shape[1])]
-    return taskwise_pearsonr, np.mean(taskwise_pearsonr)
-
+    try:
+        taskwise_pearsonr = [pearsonr(y_true[:, i], y_pred[:, i])[
+            0] for i in range(y_pred.shape[1])]
+        return taskwise_pearsonr, np.mean(taskwise_pearsonr)
+    except:
+        return pearsonr(y_true,y_pred)
 
 def spearmanr_metric(y_true, y_pred):
-    taskwise_spearmanr = [spearmanr(y_true[:, i], y_pred[:, i])[
-        0] for i in range(y_pred.shape[1])]
-    return taskwise_spearmanr, np.mean(taskwise_spearmanr)
+    try:
+        taskwise_spearmanr = [spearmanr(y_true[:, i], y_pred[:, i])[
+            0] for i in range(y_pred.shape[1])]
+        return taskwise_spearmanr, np.mean(taskwise_spearmanr)
+    except:
+        return spearmanr(y_true,y_pred)
 
 
 class CorrelationMetrics(Callback):
